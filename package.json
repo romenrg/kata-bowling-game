@@ -1,0 +1,19 @@
+{
+  "name": "kata-bowling-game",
+  "version": "1.0.0",
+  "description": "Designing my own solution of the Bowling-Game code kata from Robert Martin",
+  "main": "Game-cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romenrg/kata-bowling-game.git"
+  },
+  "author": "Romen Rodriguez-Gil",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/romenrg/kata-bowling-game/issues"
+  },
+  "homepage": "https://github.com/romenrg/kata-bowling-game#readme"
+}
