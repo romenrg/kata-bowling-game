@@ -35,6 +35,6 @@ Requirements include writing a class named “Game” that has two methods:
  * Executing node as: "node Game-cli *arrayOfFrames (e.g. [[4,5], [7,3],...])"*
  * or, with npm as: **"npm start _arrayOfFrames (e.g. [[4,5], [7,3],...])"_**
 
-### Running the tests1
+### Running the tests
  * Executing mocha as: "./node_modules/mocha/bin/mocha Game.spec.js"
  * or, with npm as: **"npm test"**
