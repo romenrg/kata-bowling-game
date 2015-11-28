@@ -4,7 +4,12 @@
   "description": "Designing my own solution of the Bowling-Game code kata from Robert Martin",
   "main": "Game-cli.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node Game-cli.js",
+    "test": "mocha ./Game.spec.js"
+  },
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
   },
   "repository": {
     "type": "git",
