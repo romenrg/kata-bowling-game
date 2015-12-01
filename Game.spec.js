@@ -27,5 +27,23 @@ describe('Bowling Game', function() {
         // Second frame
         game.roll(6);
         expect(game.score()).to.equal(13);
+    });
+    it('Rolling three balls, achieving a spare in the first frame', function() {
+        let game = new Game();
+        // First frame
+        game.roll(4);
+        game.roll(6);
+        // Second frame
+        game.roll(7);
+        expect(game.score()).to.equal(24); // Includes the third roll twice (bonus of 1st frame + 3rd roll)
+    });
+    it('Rolling four balls, achieving a strike with the first one', function() {
+        let game = new Game();
+        // First frame
+        game.roll(10);
+        // Second frame
+        game.roll(3);
+        game.roll(6);
+        expect(game.score()).to.equal(28);
     })
 });
