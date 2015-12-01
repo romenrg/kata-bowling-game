@@ -18,5 +18,14 @@ describe('Bowling Game', function() {
         game.roll(5);
         game.roll(2);
         expect(game.score()).to.equal(7);
+    });
+    it('Rolling three balls without achieving spares nor strikes; the score must be the addition', function() {
+        let game = new Game();
+        // First frame
+        game.roll(5);
+        game.roll(2);
+        // Second frame
+        game.roll(6);
+        expect(game.score()).to.equal(13);
     })
 });
