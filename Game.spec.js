@@ -12,5 +12,11 @@ describe('Bowling Game', function() {
         let game = new Game();
         game.roll(5);
         expect(game.score()).to.equal(5);
+    });
+    it('Rolling two times but not reaching 10, the score must be the addition', function() {
+        let game = new Game();
+        game.roll(5);
+        game.roll(2);
+        expect(game.score()).to.equal(7);
     })
 });
