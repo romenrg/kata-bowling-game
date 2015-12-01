@@ -38,3 +38,6 @@ Requirements include writing a class named “Game” that has two methods:
 ### Running the tests
  * Executing mocha as: "./node_modules/mocha/bin/mocha Game.spec.js"
  * or, with npm as: **"npm test"**
+
+### Notes
+This program has been tested with node versions 4.2.2 and 5.1.0, which already support some ES6 syntax using strict mode.
