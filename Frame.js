@@ -27,7 +27,7 @@ class Frame {
         return this.firstRoll + this.secondRoll + this.bonusPins;
     }
     areFrameRollsFinished() {
-        return (this.numRolls >= 2) || ((this.numRolls == 1) && (this.firstRoll == PINS_NUMBER))
+        return (this.numRolls >= 2) || ((this.numRolls == 1) && (this.isStrike()))
     }
     isStrike() {
         return this.firstRoll == PINS_NUMBER;
