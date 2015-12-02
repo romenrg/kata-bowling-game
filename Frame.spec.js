@@ -49,4 +49,22 @@ describe("Bowling Game - Frame class", function() {
         frame.roll(10);
         expect(frame.areFrameRollsFinished()).to.equal(true);
     });
+    it('Should return false when asked if the frame was a strike', function() {
+        frame.roll(1);
+        expect(frame.isStrike()).to.equal(false);
+    });
+    it('Should return true when asked if the frame was a strike', function() {
+        frame.roll(10);
+        expect(frame.isStrike()).to.equal(true);
+    });
+    it('Should return false when asked if the frame was a spare', function() {
+        frame.roll(1);
+        frame.roll(3);
+        expect(frame.isSpare()).to.equal(false);
+    });
+    it('Should return true when asked if the frame was a spare', function() {
+        frame.roll(1);
+        frame.roll(9);
+        expect(frame.isSpare()).to.equal(true);
+    });
 });

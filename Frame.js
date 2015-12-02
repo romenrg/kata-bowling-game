@@ -19,7 +19,7 @@ class Frame {
         this.numRolls++;
     }
     bonus(pins) {
-        if (this._isBonusPending()) {
+        if (this.isStrike() || this.isSpare()) {
             this.bonusPins = pins;
         }
     }
@@ -29,8 +29,11 @@ class Frame {
     areFrameRollsFinished() {
         return (this.numRolls >= 2) || ((this.numRolls == 1) && (this.firstRoll == PINS_NUMBER))
     }
-    _isBonusPending(){
-        return (this.firstRoll + this.secondRoll) == PINS_NUMBER;
+    isStrike() {
+        return this.firstRoll == PINS_NUMBER;
+    }
+    isSpare() {
+        return (this.firstRoll != PINS_NUMBER) && ((this.firstRoll + this.secondRoll) == PINS_NUMBER);
     }
 }
 
