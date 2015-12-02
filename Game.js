@@ -1,5 +1,5 @@
 "use strict";
-var Frame = require("./Frame");
+let Frame = require("./Frame");
 
 const FRAMES_NUMBER = 10;
 
@@ -7,20 +7,20 @@ class Game {
     constructor() {
         this.currentFrame = 0;
         this.frames = [];
-        for (var i=0; i<FRAMES_NUMBER; i++) {
+        for (let i=0; i<FRAMES_NUMBER; i++) {
             this.frames.push(new Frame());
         }
     }
     rollAll(framesListWithScores) {
-        var parsedSuccessfully = false;
+        let parsedSuccessfully = false;
         try {
             if (!Array.isArray(framesListWithScores)) {
                 framesListWithScores = JSON.parse(framesListWithScores);
             }
             if (Array.isArray(framesListWithScores)) {
-                for(var i=0; i<framesListWithScores.length; i++) {
+                for(let i=0; i<framesListWithScores.length; i++) {
                     if (Array.isArray(framesListWithScores[i])) {
-                        for (var j=0; j<framesListWithScores[i].length; j++) {
+                        for (let j=0; j<framesListWithScores[i].length; j++) {
                             this.roll(framesListWithScores[i][j]);
                         }
                     }
@@ -45,7 +45,7 @@ class Game {
     }
     score() {
         let totalScore = 0;
-        for (var i=0; i<FRAMES_NUMBER; i++) {
+        for (let i=0; i<FRAMES_NUMBER; i++) {
             totalScore += this.frames[i].score();
         }
         return totalScore;
