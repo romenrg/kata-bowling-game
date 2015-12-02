@@ -42,5 +42,21 @@ describe('Bowling Game - Game class', function() {
         game.roll(3);
         game.roll(6);
         expect(game.score()).to.equal(28);
-    })
+    });
+    it('RollingAll, processing all the balls rolled at once with no spares nor strikes', function() {
+        game.rollAll([[1,3],[3,2],[4,5],[6,2],[3,3],[1,1],[4,2],[7,0],[2,6],[0,1]]);
+        expect(game.score()).to.equal(56);
+    });
+    it('RollingAll, processing all the balls rolled at once (with one spare)', function() {
+        game.rollAll([[1,3],[3,2],[4,6],[6,2],[3,3],[1,1],[4,2],[7,0],[2,6],[0,1]]);
+        expect(game.score()).to.equal(63);
+    });
+    it('RollingAll, processing all the balls rolled at once (with one strike)', function() {
+        game.rollAll([[1,3],[3,2],[4,5],[6,2],[3,3],[1,1],[4,2],[10],[2,6],[0,1]]);
+        expect(game.score()).to.equal(67);
+    });
+    it('RollingAll, processing all the balls rolled at once (with one spare and one strike)', function() {
+        game.rollAll([[1,3],[3,2],[4,6],[6,2],[3,3],[1,1],[4,2],[10],[2,6],[0,1]]);
+        expect(game.score()).to.equal(74);
+    });
 });
