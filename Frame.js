@@ -26,6 +26,9 @@ class Frame {
     score() {
         return this.firstRoll + this.secondRoll + this.bonusPins;
     }
+    areFrameRollsFinished() {
+        return (this.numRolls >= 2) || ((this.numRolls == 1) && (this.firstRoll == PINS_NUMBER))
+    }
     _isBonusPending(){
         return (this.firstRoll + this.secondRoll) == PINS_NUMBER;
     }

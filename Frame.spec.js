@@ -36,4 +36,17 @@ describe("Bowling Game - Frame class", function() {
         frame.bonus(8);
         expect(frame.score()).to.equal(6);
     });
+    it('Should return that frame rolls are not finished', function() {
+        frame.roll(3);
+        expect(frame.areFrameRollsFinished()).to.equal(false);
+    });
+    it('Should return that frame rolls are finished (two rolls)', function() {
+        frame.roll(3);
+        frame.roll(3);
+        expect(frame.areFrameRollsFinished()).to.equal(true);
+    });
+    it('Should return that frame rolls are finished (one roll, but strike)', function() {
+        frame.roll(10);
+        expect(frame.areFrameRollsFinished()).to.equal(true);
+    });
 });
