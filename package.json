@@ -5,7 +5,7 @@
   "main": "Game-cli.js",
   "scripts": {
     "start": "node Game-cli.js",
-    "test": "mocha ./Game.spec.js"
+    "test": "mocha ./*.spec.js"
   },
   "devDependencies": {
     "chai": "^3.4.1",
