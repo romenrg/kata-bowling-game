@@ -59,4 +59,8 @@ describe('Bowling Game - Game class', function() {
         game.rollAll([[1,3],[3,2],[4,6],[6,2],[3,3],[1,1],[4,2],[10],[2,6],[0,1]]);
         expect(game.score()).to.equal(74);
     });
+    it('RollingAll, processing the input as a string)', function() {
+        game.rollAll("[[1,3],[3,2],[4,6],[6,2],[3,3],[1,1],[4,2],[10],[2,6],[0,1]]");
+        expect(game.score()).to.equal(74);
+    });
 });

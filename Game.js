@@ -12,8 +12,18 @@ class Game {
         }
     }
     rollAll(framesListWithScores) {
-        var framesArray = JSON.parse(framesListWithScores);
-        return Array.isArray(framesArray);
+        if (!Array.isArray(framesListWithScores)) {
+            framesListWithScores = JSON.parse(framesListWithScores);
+        }
+        if (Array.isArray(framesListWithScores)) {
+            for(var i=0; i<framesListWithScores.length; i++) {
+                if (Array.isArray(framesListWithScores[i])) {
+                    for (var j=0; j<framesListWithScores[i].length; j++) {
+                        this.roll(framesListWithScores[i][j]);
+                    }
+                }
+            }
+        }
     }
     roll(pins) {
         this.frames[this.currentFrame].roll(pins);
