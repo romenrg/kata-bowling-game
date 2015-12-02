@@ -20,14 +20,19 @@ class Game {
         if (this.frames[this.currentFrame].areFrameRollsFinished()) {
             if (this.currentFrame > 0) {
                 let previousFrame = this.currentFrame - 1;
-                if (this.frames[previousFrame].isSpare()) {
-                    this.frames[previousFrame].bonus(this.frames[this.currentFrame].firstRoll)
-                }
-                else if (this.frames[previousFrame].isStrike()) {
+                if (this.frames[previousFrame].isStrike()) {
                     this.frames[previousFrame].bonus(this.frames[this.currentFrame].firstRoll + this.frames[this.currentFrame].secondRoll)
                 }
             }
             this.currentFrame++;
+        }
+        else {
+            if (this.currentFrame > 0) {
+                let previousFrame = this.currentFrame - 1;
+                if (this.frames[previousFrame].isSpare()) {
+                    this.frames[previousFrame].bonus(this.frames[this.currentFrame].firstRoll)
+                }
+            }
         }
     }
     score() {
