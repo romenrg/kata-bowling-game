@@ -1,5 +1,7 @@
 "use strict";
 
+const PINS_NUMBER = 10;
+
 class Frame {
     constructor() {
         this.firstRoll = 0;
@@ -17,10 +19,15 @@ class Frame {
         this.numRolls++;
     }
     bonus(pins) {
-        this.bonusPins = pins;
+        if (this._isBonusPending()) {
+            this.bonusPins = pins;
+        }
     }
     score() {
         return this.firstRoll + this.secondRoll + this.bonusPins;
+    }
+    _isBonusPending(){
+        return (this.firstRoll + this.secondRoll) == PINS_NUMBER;
     }
 }
 
