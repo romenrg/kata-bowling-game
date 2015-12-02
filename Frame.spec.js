@@ -31,4 +31,11 @@ describe("Bowling Game - Frame class", function() {
         frame.bonus(8);
         expect(frame.score()).to.equal(18);
     });
+    it('Bonus should not be added if neither a spare nor a strike was achieved in this frame', function() {
+        let frame = new Frame();
+        frame.roll(3);
+        frame.roll(3);
+        frame.bonus(8);
+        expect(frame.score()).to.equal(6);
+    });
 });
