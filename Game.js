@@ -12,18 +12,26 @@ class Game {
         }
     }
     rollAll(framesListWithScores) {
-        if (!Array.isArray(framesListWithScores)) {
-            framesListWithScores = JSON.parse(framesListWithScores);
-        }
-        if (Array.isArray(framesListWithScores)) {
-            for(var i=0; i<framesListWithScores.length; i++) {
-                if (Array.isArray(framesListWithScores[i])) {
-                    for (var j=0; j<framesListWithScores[i].length; j++) {
-                        this.roll(framesListWithScores[i][j]);
+        var parsedSuccessfully = false;
+        try {
+            if (!Array.isArray(framesListWithScores)) {
+                framesListWithScores = JSON.parse(framesListWithScores);
+            }
+            if (Array.isArray(framesListWithScores)) {
+                for(var i=0; i<framesListWithScores.length; i++) {
+                    if (Array.isArray(framesListWithScores[i])) {
+                        for (var j=0; j<framesListWithScores[i].length; j++) {
+                            this.roll(framesListWithScores[i][j]);
+                        }
                     }
                 }
+                parsedSuccessfully = true;
             }
         }
+        catch (e) {
+            console.log("Error parsing the list: "+e);
+        }
+        return parsedSuccessfully;
     }
     roll(pins) {
         this.frames[this.currentFrame].roll(pins);

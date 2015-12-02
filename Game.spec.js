@@ -59,8 +59,16 @@ describe('Bowling Game - Game class', function() {
         game.rollAll([[1,3],[3,2],[4,6],[6,2],[3,3],[1,1],[4,2],[10],[2,6],[0,1]]);
         expect(game.score()).to.equal(74);
     });
-    it('RollingAll, processing the input as a string)', function() {
+    it('RollingAll, processing the input as a string', function() {
         game.rollAll("[[1,3],[3,2],[4,6],[6,2],[3,3],[1,1],[4,2],[10],[2,6],[0,1]]");
         expect(game.score()).to.equal(74);
+    });
+    it('Should return true (rollAll) since the syntax of this example is right', function() {
+        var successfullyParsed = game.rollAll("[[1,3],[3,2],[4,6],[6,2],[3,3],[1,1],[4,2],[10],[2,6],[0,1]]");
+        expect(successfullyParsed).to.equal(true);
+    });
+    it('Should return false (rollAll) since the syntax of this example is wrong', function() {
+        var successfullyParsed = game.rollAll("[[1,3],[3,2],[4]");
+        expect(successfullyParsed).to.equal(false);
     });
 });
