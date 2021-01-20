@@ -33,7 +33,7 @@ Requirements include writing a class named “Game” that has two methods:
 
 ### Running the program
  * Executing with node as: `node Game-cli "<arrayOfFrames>"`*
-     * Example for _\<arrayOfFrames\>: "[[4,5], [7,3],...])"_
+     * `<arrayOfFrames>` example values: _"[[4,5], [7,3]]"_
  * or, with npm as: `npm start "<arrayOfFrames>"`
 
 ### Running the tests
