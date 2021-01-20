@@ -32,12 +32,13 @@ Requirements include writing a class named “Game” that has two methods:
 ## Running the program and tests
 
 ### Running the program
- * Executing node as: "node Game-cli *arrayOfFrames (e.g. [[4,5], [7,3],...])"*
- * or, with npm as: **"npm start _arrayOfFrames (e.g. [[4,5], [7,3],...])"_**
+ * Executing with node as: `node Game-cli "<arrayOfFrames>"`*
+     * Example for _\<arrayOfFrames\>: "[[4,5], [7,3],...])"_
+ * or, with npm as: `npm start "<arrayOfFrames>"`
 
 ### Running the tests
- * Executing mocha as: "./node_modules/mocha/bin/mocha Game.spec.js"
- * or, with npm as: **"npm test"**
+ * Executing mocha as: `./node_modules/mocha/bin/mocha Game.spec.js`
+ * or, with npm as: `npm test`
 
 ### Notes
 This program has been tested with node versions 4.2.2 and 5.1.0, which already support some ES6 syntax using strict mode.
