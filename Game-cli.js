@@ -1,9 +1,9 @@
 "use strict";
 let Game = require("./Game");
 
-console.log("---------------------------------");
-console.log("Code Kata: Word Wrap, by @romenrg");
-console.log("---------------------------------");
+console.log("------------------------------------");
+console.log("Code Kata: Bowling Game, by @romenrg");
+console.log("------------------------------------");
 let argv = process.argv.slice(2);
 let errorMessage = "ERROR: List of frames with scores required (format: [[3, 4], [5, 2], [10], ...])";
 if (argv.length == 1) {
